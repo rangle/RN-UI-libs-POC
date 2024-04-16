@@ -55,15 +55,14 @@ export default function OrderDetails({ data }) {
         Order Details
       </Text>
       <View>
-        {data.map((item) => (
+        {data.map((item, key) => (
           <View>
+            <OrderItem key={key} item={item} />
             <HR />
-            <OrderItem key={item.title} item={item} />
           </View>
         ))}
       </View>
 
-      <HR />
       <View
         style={{
           flexDirection: "row",
