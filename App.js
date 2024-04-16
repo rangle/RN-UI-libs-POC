@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Native from "./pages/native";
 import Tamagui from "./pages/tamagui";
 import HR from "./pages/nativeComponents/HR";
+import RNUI from "./pages/rnui";
 
 function Home({ navigation }) {
   return (
@@ -18,6 +19,11 @@ function Home({ navigation }) {
       <Button
         title="Go to Tamagui implementation"
         onPress={() => navigation.navigate("Tamagui Order Summary")}
+      />
+      <HR />
+      <Button
+        title="Go to RNUI implementation"
+        onPress={() => navigation.navigate("RNUI Order Summary")}
       />
       <HR />
       <StatusBar style="auto" />
@@ -34,6 +40,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Native Order Summary" component={Native} />
         <Stack.Screen name="Tamagui Order Summary" component={Tamagui} />
+        <Stack.Screen name="RNUI Order Summary" component={RNUI} />
       </Stack.Navigator>
     </NavigationContainer>
   );
