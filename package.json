@@ -9,11 +9,14 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@eva-design/eva": "^2.2.0",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
     "@tamagui/babel-plugin": "^1.94.5",
     "@tamagui/config": "^1.94.5",
     "@tamagui/lucide-icons": "^1.94.5",
+    "@ui-kitten/components": "^5.3.1",
+    "@ui-kitten/eva-icons": "^5.3.1",
     "expo": "~50.0.14",
     "expo-font": "~11.10.3",
     "expo-status-bar": "~1.11.1",

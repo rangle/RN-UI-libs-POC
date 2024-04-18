@@ -6,6 +6,7 @@ import Native from "./pages/native";
 import Tamagui from "./pages/tamagui";
 import HR from "./pages/nativeComponents/HR";
 import RNUI from "./pages/rnui";
+import Kitten from "./pages/kitten";
 
 function Home({ navigation }) {
   return (
@@ -22,8 +23,8 @@ function Home({ navigation }) {
       />
       <HR />
       <Button
-        title="Go to RNUI implementation"
-        onPress={() => navigation.navigate("RNUI Order Summary")}
+        title="Go to RN Kitten implementation"
+        onPress={() => navigation.navigate("Kitten Order Summary")}
       />
       <HR />
       <StatusBar style="auto" />
@@ -40,7 +41,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Native Order Summary" component={Native} />
         <Stack.Screen name="Tamagui Order Summary" component={Tamagui} />
-        <Stack.Screen name="RNUI Order Summary" component={RNUI} />
+        <Stack.Screen name="Kitten Order Summary" component={Kitten} />
       </Stack.Navigator>
     </NavigationContainer>
   );
