@@ -1,26 +1,24 @@
-# React Native UI library POC
+# React Native UI Library Proof of Concept
 
-In the last few months/years Rangle has worked with several RN codebases. The question regularly comes up which component library we should use. This PoC hopes to give insight in which direction we should go.
+Over the past months/years, Rangle has engaged with various RN codebases, often pondering the choice of a component library. This PoC aims to provide insights into our potential direction.
 
 > [!CAUTION]
-> This was written in a very short time. 
-> Take the learnings but don't reuse the crappy code
+> Crafted hastily, the code here isn't ideal for reuse. Extract learnings, not code.
 
-## Run it yourself
-You can run the code by installing [expo-go](https://expo.dev/go) on your own device. Scan [the QR on this page](https://snack.expo.dev/@tinyjim93/rn-ui-libs-poc) on your device to get started.
+## Run it Yourself
+Experience it firsthand by installing [Expo Go](https://expo.dev/go) on your device. Scan [the QR code on this page](https://snack.expo.dev/@tinyjim93/rn-ui-libs-poc) to start.
 
-Local development is also possible by cloning this repo, `npm install`  and running `npm start` in the root of the project.
-You can then run the app on your device by scanning the QR code in the terminal or by running the app in a simulator.
+For local development, clone this repo, execute `npm install`, and `npm start` in the project root. Then, scan the QR code in the terminal or run it in a simulator.
 
-## The libraries
-The whole PoC is based on [Expo](https://expo.dev/). This is because it is the easiest way to get started with React Native.
+## The Libraries
+Built on [Expo](https://expo.dev/), the PoC simplifies React Native prototyping.
 
-The libraries that are compared in this PoC are:
+Libraries compared:
 - Fully native solution
 - [Tamagui](https://tamagui.dev/)
 - [UI-kitten](https://akveo.github.io/react-native-ui-kitten/)
 
-There was an attempt to include [RNUILib](https://wix.github.io/react-native-ui-lib/docs/getting-started/setup) but due to errors in the setup it was not included in this PoC.
+[RNUILib](https://wix.github.io/react-native-ui-lib/docs/getting-started/setup) wasn't included due to setup errors.
 
 ## Learnings
 > [!NOTE]
@@ -30,42 +28,31 @@ There was an attempt to include [RNUILib](https://wix.github.io/react-native-ui-
 >
 > Your millage may vary.
 
-### Fully native solution
-The fully native solution is the most flexible solution. You can do anything you want with it. The downside is that it takes a lot of time to implement everything. This is not a problem if you have a lot of time, but in most cases you don't have that luxury.
-The Native solution also has a steep learning curve compared to UI-libariers.
-Nevertheless, I do think that being able to write a fully native solution is a good skill to have. It gives you a better understanding of how React Native works and how to implement things.
+### Fully Native Solution
+The fully native solution offers unparalleled flexibility, allowing for extensive customization. However, its downside lies in the significant time investment required for implementation. 
+This steep learning curve, compared to UI libraries, makes it less viable for most projects. Nonetheless, mastering a React-Native-only approach can deepen your understanding of React Native fundamentals. 
 
-During this PoC I tried to spend as little time possible to make it work, but I thought it would be a good comparison to see how "native" feels and how "UI-libs" feel. 
-The difference between it was quite harsh, I definitely had to make my brain work harder to build the same thing that was easy in the UI-libs.
-The solution was harder to create, but came with less frustration than UI-Kitten. I felt in control and things not working felt like my own fault.
-
-For most projects, I would not recommend the fully native solution.
+Despite its challenges, I found that while working on this PoC, although more demanding, the fully native solution instilled a sense of control and ownership over the codebase.
 
 ### Tamagui
-I was very skeptical about Tamagui, especially because I find it promises too much, but I was pleasantly surprised. 
-The components are very easy to use and look good out of the box. Compared to the other solutions in the list the documentation was outstanding. 
-I could figure most things out from experience, documentation and the provided code examples.
+Initially skeptical, I found Tamagui surprisingly intuitive and efficient. Its user-friendly components and visually appealing design out of the box, along with exceptional documentation, made it stand out. 
+The swift implementation and positive experience lead me to recommend considering Tamagui as the default UI library for React Native projects. 
 
-The Tamagui implementation was done the quickest on this list and felt the by far the best to use. 
+As a side-note, based on my usage and research, while Tamagui supports `react-native-web`, I don't think it is fully production ready for that yet. 
+Make sure to do appropriate research before diving into that.
 
-From my research and this PoC I would recommend Rangle to adopt Tamagui as the default UI library for React Native projects.
+### UI-Kitten
+Included only for evaluation because we have an upcomming project. UI-Kitten is no longer maintainted and is thus anyway not recommended. 
 
-Based on my usage and research, I do think it is good to callout that I don't think `react-native-web` is a great solution yet. The components we use on the web are completely different than mobile and do not translate well to web. 
-I know there have been great products build with it, but in many cases the pain of using `react-native-web` does not stack against advantages.
+Building the screen with UI-kitten felt out of sync with typical React Native practices and failed to deliver expected functionality. 
+Despite adequate documentation for basic tasks, I doubt that this will work for more complex projects. 
 
-### UI-kitten
-UI-Kitten is no longer maintained, the only reason I included it in this PoC is because an upcoming client used it in their project and I wanted to understand how it works.
-I am not impressed by it. It feels like there was a gap in my knowledge of how React Native works and how UI-Kitten wants you to work with it. 
-The components didn't fully do what I expected them to do. The documentation was okay, but I am not sure if it would be good enough once I start building more complex screens. 
-
-I would stay away from UI-Kitten, even if the maintainers start working on it again. 
+I recommend steering clear of UI-Kitten, even if it receives future updates.
 
 ### RNUILib
-Useful to mention that I spend most of my time in this PoC working on RNUILib. I was not able to get it to work. 
-The documentation was not clear and the errors I got were not helpful. Purely from the quantity of documentation and components you would have high expectations of this library, but it is hard to recommend a library that gives so much trouble during setup.
-To be completely fair, I spend only a couple days on the whole PoC and I might have missed something. The fact that the PoC works with Expo and several UI-libs, might also impact this.
+Despite significant time investment, I could not get RNUILib to work. Unclear documentation and setup errors made it impossible to work with it. 
 
-As I didn't get the chance to build something with RNUILib it is hard to say something about that, however I did spend a lot of time reading the documentation. 
-It is absolutely horrendous. It is by far the worst documentation I have worked with. Originally the examples look sufficient, but from the text and examples it is not always clear what the component does.
+I had (and still have) high expectations due to its extensive components library, the reality fell short during my attempt. 
+While I acknowledge the possibility of "skill-issues" during my exploration, the initial experience with RNUILib's documentation was incredibly disappointing. 
 
-For now I would not recommend RNUILib. I do still expect it will be the most powerful UI library currently available, but you will need to invest a lot of time to get there. 
+Until substantial improvements are made, I cannot recommend RNUILib for adoption. 
